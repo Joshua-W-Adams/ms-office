@@ -22,22 +22,18 @@ namespace ms_office
         static void Main(string[] args) {
 
             // Ensure json arguements have been passed to the application
-            //if (args.Length != 0) {
+            if (args.Length != 0) {
 
-                //var json = args[0];
-                var json = testCases(1);
-                var json2 = testCases(2);
+                var json = args[0];
+                //var json = testCases(1);
 
                 // Convert JSON text string to C# object
                 dataStructures.Parameters parameters = JsonConvert.DeserializeObject<dataStructures.Parameters>(json);
 
-                dataStructures.Parameters parameters2 = JsonConvert.DeserializeObject<dataStructures.Parameters>(json2);
                 // Call main loop for creating word document
                 createWordDocument(parameters);
-                createWordDocument(parameters2);
 
-
-            //}
+            }
 
         }
 
